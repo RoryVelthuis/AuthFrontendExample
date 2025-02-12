@@ -1,9 +1,13 @@
-<script></script>
+<script>
+        import { isUserLoggedIn, userData } from '$lib/stores';
+</script>
 
 <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/contact">Contact</a></li>
+    {#if $isUserLoggedIn}
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+    {/if}
 </ul>
 
 
